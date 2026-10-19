@@ -12,14 +12,28 @@
     {% if page_meta.meta_description %}
       <meta name="description" content="{{ page_meta.meta_description }}">
     {% endif %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     {{ standard_header_includes }}
     <link rel="stylesheet" href="{{ get_asset_url('../css/main.css') }}">
   </head>
   <body>
-    <main class="page-wrapper">
-      {% dnd_area "main_area" label="Hauptbereich" %}
-      {% end_dnd_area %}
-    </main>
+    <div class="page-wrapper">
+      <div class="sheet">
+        <header class="site-header">
+          <img class="logo" src="{{ get_asset_url('../images/kickscale-logo.svg') }}" alt="Kickscale">
+        </header>
+        <main class="content">
+          {% dnd_area "main_area" label="Hauptbereich" %}
+          {% end_dnd_area %}
+        </main>
+        <footer class="site-footer">
+          <div>Kickscale FlexCo</div>
+          <div class="pills"><span class="pill">GDPR</span><span class="pill">ISO 27001:2022</span></div>
+        </footer>
+      </div>
+    </div>
     {{ standard_footer_includes }}
   </body>
 </html>
