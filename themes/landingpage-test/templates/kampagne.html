@@ -1,0 +1,25 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Kampagne
+-->
+<!doctype html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_meta.html_title }}</title>
+    {% if page_meta.meta_description %}
+      <meta name="description" content="{{ page_meta.meta_description }}">
+    {% endif %}
+    {{ standard_header_includes }}
+    <link rel="stylesheet" href="{{ get_asset_url('../css/main.css') }}">
+  </head>
+  <body>
+    <main class="page-wrapper">
+      {% dnd_area "main_area" label="Hauptbereich" %}
+      {% end_dnd_area %}
+    </main>
+    {{ standard_footer_includes }}
+  </body>
+</html>
