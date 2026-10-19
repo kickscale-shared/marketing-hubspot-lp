@@ -1,17 +1,15 @@
 <!--
   templateType: page
   isAvailableForNewContent: true
-  label: Kampagne
+  label: Kampagne (Revenue Breakfast Vienna)
 -->
 <!doctype html>
-<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<html lang="en" {{ html_lang_dir }}>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page_meta.html_title }}</title>
-    {% if page_meta.meta_description %}
-      <meta name="description" content="{{ page_meta.meta_description }}">
-    {% endif %}
+    <meta name="description" content="{{ page_meta.meta_description or 'Revenue Breakfast Vienna on June 19, 2026: curated roundtables with sales and revenue leaders from the DACH region. 30 spots.' }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,17 +19,63 @@
   <body>
     <div class="page-wrapper">
       <div class="sheet">
-        <header class="site-header">
-          <img class="logo" src="{{ get_asset_url('../images/kickscale-logo.svg') }}" alt="Kickscale">
-        </header>
+
+        <section class="hero">
+          <header class="site-header">
+            <img class="logo" src="{{ get_asset_url('../images/kickscale-logo.svg') }}" alt="Kickscale">
+          </header>
+          <span class="tag"><span class="dot"></span>Sales Leader Breakfast &middot; Summer Edition 2026</span>
+          <h1>Revenue Breakfast Vienna. <span class="accent">Curated roundtables for sales leaders.</span></h1>
+          <p class="lead">Following a successful premiere, our Revenue Breakfast returns to Vienna, this time featuring curated roundtables and a new format.</p>
+          <ul class="meta">
+            <li>Friday, June 19, 2026</li>
+            <li>8:00 AM to 10:00 AM</li>
+            <li>Compass CUBE, Vienna</li>
+            <li>30 spots</li>
+          </ul>
+          <a class="button" href="#anmeldung">Secure your spot</a>
+        </section>
+
         <main class="content">
-          {% dnd_area "main_area" label="Hauptbereich" %}
-          {% end_dnd_area %}
+          <section class="section">
+            <span class="eyebrow">What to expect</span>
+            <h2>Forget traditional networking</h2>
+            <p>This time, you won't just be sitting side by side. You'll be engaging directly at the table: curated roundtables, small groups, and topics that truly matter to you.</p>
+            <p>You'll discuss on equal footing with sales and revenue leaders from the DACH region who manage the same pipelines, forecasts and quotas as you. What's working in 2026, and what isn't. Unfiltered, over espresso and breakfast. These are insights that would otherwise take multiple coffee chats to uncover.</p>
+            <ul class="checks">
+              <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Exchange ideas in curated roundtables with experienced sales and revenue leaders from the DACH region</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Get concrete strategies that other teams are testing live right now, not outdated ones</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Learn firsthand how leading sales leaders are actually using AI in sales</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Start your Friday with breakfast in the heart of Vienna, back at the office by 10:00 AM sharp</span></li>
+            </ul>
+          </section>
+
+          <section class="section">
+            <span class="eyebrow">Details</span>
+            <h2>When and where</h2>
+            <div class="facts">
+              <div class="fact"><b>Date</b><span>Friday, June 19, 2026</span></div>
+              <div class="fact"><b>Time</b><span>8:00 AM to 10:00 AM</span></div>
+              <div class="fact"><b>Venue</b><span>Compass CUBE, Schönbrunner Str. 231, 1120 Vienna</span></div>
+              <div class="fact"><b>Capacity</b><span>30 spots, confirmation within 24 hours</span></div>
+            </div>
+          </section>
         </main>
+
+        <section class="signup" id="anmeldung">
+          <span class="eyebrow">Registration</span>
+          <h2>Secure one of the 30 spots</h2>
+          <p>Fill out the form and we will confirm within 24 hours.</p>
+          <div class="hs-form-frame">
+            {% module "registration_form" path="@hubspot/form" label="Anmeldeformular" %}
+          </div>
+        </section>
+
         <footer class="site-footer">
-          <div>Kickscale FlexCo</div>
+          <div>Kickscale FlexCo &middot; Vienna</div>
           <div class="pills"><span class="pill">GDPR</span><span class="pill">ISO 27001:2022</span></div>
         </footer>
+
       </div>
     </div>
     {{ standard_footer_includes }}
